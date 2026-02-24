@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: MIT
 
-global using Fahrenheit.Core;
-
 using System.IO;
 
 namespace Fahrenheit.Mods.EFP;
