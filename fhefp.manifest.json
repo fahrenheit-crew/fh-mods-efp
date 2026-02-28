@@ -4,7 +4,7 @@
     "Desc":"Provides universal fixes for common base game issues so mods do not need to reimplement them.",
     "Authors":"The Fahrenheit contributors",
     "Version":"1.0.0-alpha",
-    "Link":"https://github.com/peppy-enterprises/fh-mods-efp",
+    "Link":"https://github.com/fahrenheit-crew/fh-mods-efp",
     "Dependencies":[],
     "LoadAfter":[],
     "Flags":"NONE"
