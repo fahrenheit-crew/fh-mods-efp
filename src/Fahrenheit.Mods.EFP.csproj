@@ -1,0 +1,11 @@
+﻿<Project Sdk="Fahrenheit.Sdk/1.0.0-alpha11">
+    <PropertyGroup>
+        <AssemblyName>fhefp</AssemblyName>
+        <AssemblyTitle>Extensions, Fixes, and Patches</AssemblyTitle>
+        <Product>Extensions, Fixes, and Patches</Product>
+        <Authors>The Fahrenheit contributors</Authors>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/fahrenheit-crew/fh-mods-efp</RepositoryUrl>
+        <FhManifestFlags>NONE</FhManifestFlags>
+    </PropertyGroup>
+</Project>

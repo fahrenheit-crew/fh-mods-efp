@@ -11,12 +11,13 @@ public class Patches {
 
 [FhLoad(FhGameId.FFX)]
 public class EfpModule : FhModule {
-    public Patches patches; // TODO: re-evaluate.
 
     private FhModContext? _context;
     private FileStream?   _global_state;
 
-    public override bool init(FhModContext context, FileStream global_state) {
+    public Patches patches; // TODO: re-evaluate.
+
+    public EfpModule() {
         patches  = new();
         settings = new FhSettingsCategory("fh.efp", [
             // Choose which category to put your patch in:
@@ -34,7 +35,9 @@ public class EfpModule : FhModule {
                 // Add your patches here like so: `patches.patch_name.get_settings()`
             ]),
         ]);
+    }
 
+    public override bool init(FhModContext context, FileStream global_state) {
         _context      = context;
         _global_state = global_state;
 
