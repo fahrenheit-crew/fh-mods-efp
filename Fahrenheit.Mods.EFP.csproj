@@ -1,7 +1,0 @@
-﻿<Project Sdk="Fahrenheit.Sdk/1.0.0-alpha08">
-    <PropertyGroup>
-        <AssemblyName>fhefp</AssemblyName>
-        <AssemblyTitle>Extensions, Fixes and Patches for Fahrenheit</AssemblyTitle>
-        <Product>Extensions, Fixes and Patches for Fahrenheit</Product>
-    </PropertyGroup>
-</Project>

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Modules.EFP;
+namespace Fahrenheit.Mods.EFP;
 
 public abstract class EfpPatch {
     public abstract FhSettingsCategory get_settings();
