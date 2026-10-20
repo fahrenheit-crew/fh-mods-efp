@@ -15,9 +15,6 @@ public class EfpSettings : FhSettingProvider<EfpModule> {
             new FhSettingsCategory("patches", [
                 // Add your patches here like so: `patches.patch_name.get_settings()`
             ]),
-            new FhSettingsCategory("extensions", [
-                // Add your patches here like so: `patches.patch_name.get_settings()`
-            ]),
         ];
     }
 }
@@ -25,15 +22,12 @@ public class EfpSettings : FhSettingProvider<EfpModule> {
 // Choose which category to put your patch in:
 // - Fixes are EfpPatches that fix vanilla bugs, such as commands not properly dealing with arbitrary overdrive costs
 // - Patches are EfpPatches that provide commonly desired changes, such as guaranteed AP for all party members
-// - Extensions are EfpPatches that provide Fahrenheit with runtime functionality for its APIs, such as adding new commands
 
 [FhLoad(FhGameId.FFX)]
 public class EfpModule : FhModule {
-    private readonly EfpSettings _settings;
+    private readonly EfpSettings _settings = new();
 
-    public EfpModule() {
-        _settings = new();
-    }
+    public EfpModule() { }
 
     public override bool init(FhModContext context, FileStream global_state) {
         return true;
