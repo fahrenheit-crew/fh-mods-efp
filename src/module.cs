@@ -1,29 +1,13 @@
 // SPDX-License-Identifier: MIT
-
-using System.IO;
+//
+// This file is part of Extensions, Fixes and Patches, a mod for FF X/X-2 HD. © 2023-2026 The Fahrenheit contributors.
+// It is licensed to you under the MIT License. See LICENSE.
 
 namespace Fahrenheit.Mods.EFP;
 
-public class Patches {
-    //public static OverdriveCostFix overdrive_cost = new();
-    // Add patch here like so: `public static PatchType patch_name = new();`
-}
-
-[FhLoad(FhGameId.FFX)]
-public class EfpModule : FhModule {
-
-    private FhModContext? _context;
-    private FileStream?   _global_state;
-
-    public Patches patches; // TODO: re-evaluate.
-
-    public EfpModule() {
-        patches  = new();
-        settings = new FhSettingsCategory("fh.efp", [
-            // Choose which category to put your patch in:
-            // - Fixes are EfpPatches that fix vanilla bugs, such as commands not properly dealing with arbitrary overdrive costs
-            // - Patches are EfpPatches that provide commonly desired changes, such as guaranteed AP for all party members
-            // - Extensions are EfpPatches that provide Fahrenheit with runtime functionality for its APIs, such as adding new commands
+public class EfpSettings : FhSettingProvider<EfpModule> {
+    protected override IEnumerable<FhSetting> get() {
+        return [
             new FhSettingsCategory("fixes", [
                 //patches.overdrive_cost.get_settings(),
                 // Add your patches here like so: `patches.patch_name.get_settings()`
@@ -31,19 +15,21 @@ public class EfpModule : FhModule {
             new FhSettingsCategory("patches", [
                 // Add your patches here like so: `patches.patch_name.get_settings()`
             ]),
-            new FhSettingsCategory("extensions", [
-                // Add your patches here like so: `patches.patch_name.get_settings()`
-            ]),
-        ]);
+        ];
     }
+}
+
+// Choose which category to put your patch in:
+// - Fixes are EfpPatches that fix vanilla bugs, such as commands not properly dealing with arbitrary overdrive costs
+// - Patches are EfpPatches that provide commonly desired changes, such as guaranteed AP for all party members
+
+[FhLoad(FhGameId.FFX)]
+public class EfpModule : FhModule {
+    private readonly EfpSettings _settings = new();
+
+    public EfpModule() { }
 
     public override bool init(FhModContext context, FileStream global_state) {
-        _context      = context;
-        _global_state = global_state;
-
-        //patches.overdrive_cost.hook();
-        // Add patch here like so: `patches.patch_name.hook()`
-
         return true;
     }
 }

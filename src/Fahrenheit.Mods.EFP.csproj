@@ -1,8 +1,8 @@
-﻿<Project Sdk="Fahrenheit.Sdk/1.0.0-alpha11">
+﻿<Project Sdk="Fahrenheit.Sdk/1.0.0-alpha12">
     <PropertyGroup>
         <AssemblyName>fhefp</AssemblyName>
-        <AssemblyTitle>Extensions, Fixes, and Patches</AssemblyTitle>
-        <Product>Extensions, Fixes, and Patches</Product>
+        <AssemblyTitle>Extras, Fixes and Patches</AssemblyTitle>
+        <Product>Extras, Fixes, and Patches</Product>
         <Description>Provides universal fixes for common base game issues so mods do not need to reimplement them.</Description>
         <Version>1.0.0-alpha</Version>
         <Authors>The Fahrenheit contributors</Authors>
